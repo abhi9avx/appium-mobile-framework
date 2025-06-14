@@ -1,5 +1,19 @@
 # 🚀 Appium Test Framework for Android Settings App
 
+## 📝 Overview
+
+This project serves as a robust and comprehensive **Appium Test Automation Framework** specifically designed for testing the Android Settings application. Built with a focus on maintainability, scalability, and ease of use, this framework leverages industry-standard tools to provide reliable end-to-end testing capabilities for mobile applications.
+
+Key features of this framework include:
+- **Cross-platform compatibility**: Primarily focused on Android, but designed with best practices that can be extended to other platforms.
+- **Robust Test Structure**: Utilizes TestNG for structured test execution, enabling powerful test organization, parallel execution, and detailed reporting.
+- **Centralized Configuration**: All Appium capabilities and driver settings are managed in `BaseTest.java` for easy configuration and consistency across tests.
+- **Simplified Test Cases**: Test cases are written to be clear and concise, focusing on core application functionalities to enhance readability and maintainability.
+- **Comprehensive Reporting**: Integrated with Maven, allowing for easy execution and generation of detailed test reports.
+- **Troubleshooting Guides**: Detailed sections in the README to assist users in setting up the environment and resolving common issues.
+
+This framework is ideal for quality assurance engineers, automation testers, and developers looking for a solid foundation to build and execute automated tests for Android applications using Appium.
+
 A robust test automation framework using Appium for testing Android Settings application.
 
 ## 🎯 Tech Stack
@@ -225,3 +239,12 @@ Contains test cases for Android Settings app:
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details 
+
+### 👨‍💻 Author
+
+Abhinav Kumar
+
+LinkedIn: [Connect with me](https://www.linkedin.com/in/your-linkedin-profile)
+GitHub: [@abhi9avx](https://github.com/abhi9avx)
+
+Made with ❤️ by Abhinav Kumar 

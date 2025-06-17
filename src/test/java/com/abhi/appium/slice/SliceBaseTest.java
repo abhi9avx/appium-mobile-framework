@@ -22,12 +22,12 @@ public class SliceBaseTest {
             caps.setCapability("appium:app", "/Users/abhinav/Downloads/appAndroid.apk");
             caps.setCapability("appium:appPackage", "indwin.c3.shareapp.test");
             caps.setCapability("appium:appActivity", "com.slice.android.main.SingleActivity");
-            caps.setCapability("appium:autoGrantPermissions", true);
+            caps.setCapability("appium:autoGrantPermissions", false);
             caps.setCapability("appium:noReset", false);
             caps.setCapability("appium:newCommandTimeout", 3600);
             caps.setCapability("appium:ensureWebviewsHavePages", true);
             caps.setCapability("appium:nativeWebScreenshot", true);
-            caps.setCapability("appium:connectHardwareKeyboard", true);
+            caps.setCapability("appium:connectHardwareKeyboard", true); 
 
             driver = new AndroidDriver(new URL(SERVER_URL), caps);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

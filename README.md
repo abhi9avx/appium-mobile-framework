@@ -30,9 +30,9 @@ AppiumTestFramework/
 │                       └── slice/
 │                           ├── SliceBaseTest.java
 │                           └── SliceAppTest.java
-├── testng.xml
+├── android-testng.xml
+├── ios-testng.xml
 ├── pom.xml
-├── run_tests.sh
 └── README.md
 ```
 
@@ -54,9 +54,9 @@ AppiumTestFramework/
    - `SliceAppTest.java`: Tests for Slice app functionality
 
 3. **Configuration Files**
-   - `testng.xml`: TestNG suite configuration
+   - `android-testng.xml`: TestNG suite configuration for Android tests
+   - `ios-testng.xml`: TestNG suite configuration for iOS tests
    - `pom.xml`: Maven dependencies and project configuration
-   - `run_tests.sh`: Shell script for running tests in loop
 
 ## 🏗️ Framework Features
 
@@ -120,33 +120,50 @@ AppiumTestFramework/
 
 ### Running Tests
 
-1. **Single Run**
+1. **Run Android Tests**
    ```bash
-   mvn test -DsuiteXmlFile=testng.xml
+   mvn clean test -Dplatform=android
    ```
+   This will execute the test suite defined in `android-testng.xml`
 
-2. **Multiple Runs**
+2. **Run iOS Tests**
    ```bash
-   ./run_tests.sh
+   mvn clean test -Dplatform=ios
    ```
-   This will execute the test suite 10 times in sequence.
+   This will execute the test suite defined in `ios-testng.xml`
+
+3. **Run Specific Test Class**
+   ```bash
+   mvn test -Dtest=SettingsTest
+   # or
+   mvn test -Dtest=SliceAppTest
+   ```
 
 ## 📊 Test Reports
 
-Test results are generated in the `target/surefire-reports` directory after each test run.
+Test results are generated in the `target/surefire-reports` directory after each test run. The reports include:
+- Test execution summary
+- Detailed test results
+- Error messages and stack traces
+- Test duration and status
 
 ## 🔧 Configuration
 
-### TestNG Suite
-The `testng.xml` file contains two test suites:
-1. Settings App Test
-2. Slice App Test
+### TestNG Suites
+The framework includes two TestNG suite files:
+1. `android-testng.xml`: Contains test suites for Android apps
+   - Settings App Test
+   - Slice App Test
+2. `ios-testng.xml`: Contains test suites for iOS apps
 
 ### Maven Configuration
-The `pom.xml` includes all necessary dependencies:
-- Appium Java Client
-- Selenium Java
-- TestNG
+The `pom.xml` includes:
+- Dynamic suite selection based on platform
+- All necessary dependencies:
+  - Appium Java Client
+  - Selenium Java
+  - TestNG
+- Surefire plugin configuration for test execution
 
 ## 🤝 Contributing
 

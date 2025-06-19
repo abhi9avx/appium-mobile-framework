@@ -1,188 +1,290 @@
-# Appium Test Framework
+# 📱 Appium Test Framework
 
-A robust mobile automation testing framework built with Appium, Java, and TestNG for testing Android applications.
+> A comprehensive mobile automation testing framework built with Appium, Java, and TestNG for cross-platform mobile application testing.
 
-## 🚀 Project Overview
+[![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)
+[![Appium](https://img.shields.io/badge/Appium-9.4.0-blue.svg)](https://appium.io/)
+[![TestNG](https://img.shields.io/badge/TestNG-7.11.0-green.svg)](https://testng.org/)
+[![Maven](https://img.shields.io/badge/Maven-3.6+-red.svg)](https://maven.apache.org/)
 
-This framework is designed to automate testing of Android applications using Appium. It includes test cases for both the Android Settings app and a custom Slice app, demonstrating different automation scenarios.
+## 🎯 Overview
+
+This framework provides a robust foundation for mobile test automation, supporting both Android and iOS platforms. It demonstrates best practices for mobile testing with real-world examples including system apps (Settings) and custom applications (Slice app).
+
+### ✨ Key Features
+
+- 🔄 **Cross-Platform Support** - Android & iOS test execution
+- 🏗️ **Modular Architecture** - Separate base classes for different app types
+- 🎯 **Page Object Pattern** - Maintainable and scalable test structure
+- 📊 **Comprehensive Reporting** - Detailed test execution reports
+- 🔧 **Flexible Configuration** - Easy test suite management with TestNG
+- ⚡ **Parallel Execution** - Support for concurrent test runs
 
 ## 🛠️ Technology Stack
 
-- **Appium**: 9.4.0
-- **Selenium**: 4.33.0
-- **TestNG**: 7.11.0
-- **Java**: Latest version
-- **Maven**: For dependency management and build automation
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Java** | 17+ | Programming language |
+| **Appium** | 9.4.0 | Mobile automation framework |
+| **Selenium** | 4.33.0 | WebDriver implementation |
+| **TestNG** | 7.11.0 | Testing framework |
+| **Maven** | 3.6+ | Build and dependency management |
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 AppiumTestFramework/
-├── src/
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── abhi/
-│                   └── appium/
-│                       ├── Demo/
-│                       │   ├── DemoBaseTest.java
-│                       │   └── SettingsTest.java
-│                       └── slice/
-│                           ├── SliceBaseTest.java
-│                           └── SliceAppTest.java
-├── android-testng.xml
-├── ios-testng.xml
-├── pom.xml
-└── README.md
+├── 📁 src/
+│   ├── 📁 main/java/com/abhi/appium/          # Main source code
+│   └── 📁 test/java/com/abhi/appium/          # Test classes
+│       ├── 📁 Demo/                           # Settings app tests
+│       │   ├── DemoBaseTest.java              # Base class for Settings
+│       │   └── SettingsTest.java              # Settings test scenarios
+│       ├── 📁 ios/                            # iOS specific tests
+│       │   ├── iOSBaseTest.java               # iOS base test class
+│       │   └── SettingsIOSTest.java           # iOS Settings tests
+│       └── 📁 slice/                          # Slice app tests
+│           ├── SliceBaseTest.java             # Base class for Slice app
+│           └── SliceAppTest.java              # Slice app test scenarios
+├── 📄 android-testng.xml                      # Android test suite
+├── 📄 ios-testng.xml                          # iOS test suite
+├── 📄 pom.xml                                 # Maven configuration
+└── 📄 README.md                               # Project documentation
 ```
 
-### Key Components
+## 🏗️ Architecture
 
-1. **Base Test Classes**
-   - `DemoBaseTest.java`: Base class for Settings app tests
-     - Handles driver initialization for Settings app
-     - Manages Appium capabilities specific to Settings app
-     - Provides common setup and teardown methods
-   
-   - `SliceBaseTest.java`: Base class for Slice app tests
-     - Handles driver initialization for Slice app
-     - Manages Appium capabilities specific to Slice app
-     - Provides common setup and teardown methods
+### Base Test Classes
 
-2. **Test Classes**
-   - `SettingsTest.java`: Tests for Android Settings app
-   - `SliceAppTest.java`: Tests for Slice app functionality
+#### 🤖 `DemoBaseTest` (Android Settings)
+- Manages AndroidDriver lifecycle
+- Configures Settings app capabilities
+- Provides common utilities for Settings tests
+- Handles setup and teardown operations
 
-3. **Configuration Files**
-   - `android-testng.xml`: TestNG suite configuration for Android tests
-   - `ios-testng.xml`: TestNG suite configuration for iOS tests
-   - `pom.xml`: Maven dependencies and project configuration
+#### 🍎 `iOSBaseTest` (iOS)
+- Manages IOSDriver lifecycle
+- Configures iOS app capabilities
+- Provides iOS-specific utilities
+- Handles iOS setup and teardown
 
-## 🏗️ Framework Features
+#### 🔷 `SliceBaseTest` (Custom App)
+- Manages AndroidDriver for Slice app
+- Configures custom app capabilities
+- Provides app-specific utilities
+- Handles custom app setup and teardown
 
-1. **Base Test Classes**
-   - `DemoBaseTest`:
-     - Extends Appium's AndroidDriver
-     - Configures capabilities for Settings app
-     - Implements common test setup and teardown
-     - Handles driver initialization and cleanup
-     - Provides utility methods for Settings app testing
-   
-   - `SliceBaseTest`:
-     - Extends Appium's AndroidDriver
-     - Configures capabilities for Slice app
-     - Implements common test setup and teardown
-     - Handles driver initialization and cleanup
-     - Provides utility methods for Slice app testing
+### Test Classes
 
-2. **Test Scenarios**
-   - Settings App:
-     - Launch and verify Settings app
-     - Element presence verification
-     - Robust element location strategies
-   
-   - Slice App:
-     - Initial button interaction
-     - DLS button functionality
-     - Multiple element verification
+| Test Class | Platform | Purpose |
+|------------|----------|---------|
+| `SettingsTest` | Android | System Settings app automation |
+| `SettingsIOSTest` | iOS | iOS Settings app automation |
+| `SliceAppTest` | Android | Custom Slice app functionality |
 
-3. **Automation Features**
-   - Explicit waits for better reliability
-   - Multiple locator strategies
-   - Error handling and reporting
-   - Cross-device compatibility
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
 
-1. Java JDK installed
-2. Maven installed
-3. Appium Server running
-4. Android device/emulator connected
-5. Android SDK installed
+Ensure you have the following installed:
 
-### Setup
+- ☕ **Java JDK 17+**
+- 📦 **Maven 3.6+**
+- 📱 **Android SDK** (for Android testing)
+- �� **Xcode** (for iOS testing)
+- 🔧 **Appium Server**
+- 📲 **Connected device or emulator**
 
-1. Clone the repository:
+### Installation
+
+1. **Clone the repository**
    ```bash
-   git clone [repository-url]
+   git clone <repository-url>
+   cd AppiumTestFramework
    ```
 
-2. Install dependencies:
+2. **Install dependencies**
    ```bash
    mvn clean install
    ```
 
-3. Start Appium server
-
-4. Connect Android device/emulator
-
-### Running Tests
-
-1. **Run Android Tests**
+3. **Start Appium server**
    ```bash
-   mvn clean test -Dplatform=android
+   appium
    ```
-   This will execute the test suite defined in `android-testng.xml`
 
-2. **Run iOS Tests**
-   ```bash
-   mvn clean test -Dplatform=ios
-   ```
-   This will execute the test suite defined in `ios-testng.xml`
+4. **Connect your device**
+   - For Android: Connect device via USB or start emulator
+   - For iOS: Connect device or start iOS simulator
 
-3. **Run Specific Test Class**
-   ```bash
-   mvn test -Dtest=SettingsTest
-   # or
-   mvn test -Dtest=SliceAppTest
-   ```
+## 🎮 Running Tests
+
+### Command Line Execution
+
+#### Run All Android Tests
+```bash
+mvn clean test -Dplatform=android
+```
+
+#### Run All iOS Tests
+```bash
+mvn clean test -Dplatform=ios
+```
+
+#### Run Specific Test Classes
+```bash
+# Settings tests only
+mvn test -Dtest=SettingsTest
+
+# Slice app tests only
+mvn test -Dtest=SliceAppTest
+
+# iOS Settings tests only
+mvn test -Dtest=SettingsIOSTest
+```
+
+#### Run with Custom Parameters
+```bash
+mvn test -Dtest=SettingsTest -DdeviceName="Pixel 6" -DplatformVersion="13"
+```
+
+### IDE Execution
+
+1. **IntelliJ IDEA / Eclipse**
+   - Right-click on test class → Run
+   - Use TestNG plugin for suite execution
+
+2. **TestNG Suite Files**
+   - Run `android-testng.xml` for Android tests
+   - Run `ios-testng.xml` for iOS tests
 
 ## 📊 Test Reports
 
-Test results are generated in the `target/surefire-reports` directory after each test run. The reports include:
-- Test execution summary
-- Detailed test results
-- Error messages and stack traces
-- Test duration and status
+After test execution, reports are available in:
 
-## 🔧 Configuration
+```
+target/
+├── surefire-reports/           # Maven Surefire reports
+│   ├── index.html             # Test summary
+│   └── TEST-*.xml             # Detailed XML reports
+└── test-output/               # TestNG reports
+    ├── index.html             # TestNG HTML report
+    └── emailable-report.html   # Email-friendly report
+```
 
-### TestNG Suites
-The framework includes two TestNG suite files:
-1. `android-testng.xml`: Contains test suites for Android apps
-   - Settings App Test
-   - Slice App Test
-2. `ios-testng.xml`: Contains test suites for iOS apps
+## ⚙️ Configuration
 
-### Maven Configuration
-The `pom.xml` includes:
-- Dynamic suite selection based on platform
-- All necessary dependencies:
-  - Appium Java Client
-  - Selenium Java
-  - TestNG
-- Surefire plugin configuration for test execution
+### TestNG Suite Configuration
+
+#### `android-testng.xml`
+```xml
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Android Test Suite">
+    <test name="Settings Tests">
+        <classes>
+            <class name="com.abhi.appium.Demo.SettingsTest"/>
+        </classes>
+    </test>
+    <test name="Slice App Tests">
+        <classes>
+            <class name="com.abhi.appium.slice.SliceAppTest"/>
+        </classes>
+    </test>
+</suite>
+```
+
+### Maven Profiles
+
+The framework supports platform-specific execution through Maven profiles:
+
+```xml
+<profiles>
+    <profile>
+        <id>android</id>
+        <properties>
+            <suiteXmlFile>android-testng.xml</suiteXmlFile>
+        </properties>
+    </profile>
+    <profile>
+        <id>ios</id>
+        <properties>
+            <suiteXmlFile>ios-testng.xml</suiteXmlFile>
+        </properties>
+    </profile>
+</profiles>
+```
+
+## 🔧 Customization
+
+### Adding New Tests
+
+1. **Create test class** extending appropriate base class
+2. **Add test methods** with `@Test` annotation
+3. **Update TestNG suite** files to include new tests
+4. **Run tests** to verify implementation
+
+### Adding New Apps
+
+1. **Create new base test class** for the app
+2. **Configure app-specific capabilities**
+3. **Implement app-specific utilities**
+4. **Create test classes** extending the new base class
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| **Appium server not running** | Start Appium: `appium` |
+| **Device not detected** | Check USB debugging / device connection |
+| **App not installed** | Verify app package name and installation |
+| **Element not found** | Check locator strategies and wait conditions |
+
+### Debug Mode
+
+Enable debug logging by adding to your test:
+```java
+System.setProperty("appium.debug", "true");
+```
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+We welcome contributions! Please follow these steps:
 
-## 📝 License
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Coding Standards
 
-## 👥 Authors
+- Follow Java naming conventions
+- Add JavaDoc comments for public methods
+- Write meaningful test descriptions
+- Maintain consistent code formatting
 
-- Abhinav - Initial work
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Abhinav**
+- 📧 Email: [your-email@example.com]
+- 🐙 GitHub: [@your-github-username]
 
 ## 🙏 Acknowledgments
 
-- Appium team for the excellent automation framework
-- TestNG team for the testing framework
-- Selenium team for the web automation capabilities 
+- 📱 [Appium](https://appium.io/) - Mobile automation framework
+- 🧪 [TestNG](https://testng.org/) - Testing framework
+- 🌐 [Selenium](https://selenium.dev/) - WebDriver implementation
+- ☕ Java Community - For continuous support and resources
+
+---
+
+<div align="center">
+  <p>⭐ Star this repository if you find it helpful!</p>
+  <p>🐛 Found a bug? <a href="../../issues">Report it here</a></p>
+</div> 

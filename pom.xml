@@ -10,11 +10,6 @@
   <name>AppiumTestFramework</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <!-- Default to android suite if no platform is provided -->
-    <platform>android</platform>
-  </properties>
-
   <dependencies>
     <!-- Appium Java Client -->
     <dependency>
@@ -48,7 +43,7 @@
         <version>3.2.5</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>${platform}-testng.xml</suiteXmlFile>
+            <suiteXmlFile>android-testng.xml</suiteXmlFile>
           </suiteXmlFiles>
           <testFailureIgnore>false</testFailureIgnore>
         </configuration>

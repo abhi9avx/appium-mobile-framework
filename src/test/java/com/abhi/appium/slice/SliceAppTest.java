@@ -19,8 +19,13 @@ public class SliceAppTest extends SliceBaseTest {
             // ⏱️ Start timer
             long startTime = System.currentTimeMillis();
 
-            // Step 1: Click system OK dialog
-            wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.id("android:id/button1"))).click();
+            // Step 1: Click system OK dialog (optional - might not appear)
+            try {
+                wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.id("android:id/button1"))).click();
+                System.out.println("✅ System OK dialog clicked");
+            } catch (Exception e) {
+                System.out.println("ℹ️ System OK dialog not found, continuing...");
+            }
 
             // Step 2: Click DLS button
             wait.until(ExpectedConditions.elementToBeClickable(

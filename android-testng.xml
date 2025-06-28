@@ -3,7 +3,7 @@
    
     <test name="Slice App Test">
         <classes>
-            <class name="com.abhi.appium.slice.SliceAppTest"/>
+            <class name="com.abhi.appium.tests.SliceAppTest"/>
         </classes>
     </test>
 </suite>
